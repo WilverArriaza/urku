@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule  } from "@angular/common/http"
+
 // Routes
 import { AppRoutingModule } from './app-routing.module';
+
+// Services
+import { InformationService } from "./services/information.service"
 
 // Componenets
 import { AppComponent } from './app.component';
@@ -23,9 +28,10 @@ import { ProductComponent } from './components/product/product.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [InformationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
